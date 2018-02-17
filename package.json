@@ -1,0 +1,26 @@
+{
+  "name": "suyundukov.com",
+  "version": "1.0.0",
+  "description": "My Personal Site",
+  "author": "Nurlan Suyundukov",
+  "license": "MIT",
+  "repository": {
+    "url": "github.com/suyundukov/suyundukov.com",
+    "type": "git"
+  },
+  "scripts": {
+    "autoprefixer": "postcss -u autoprefixer -c package.json -r ./static/css/*.css",
+    "sass": "sass assets/scss:static/css -s compressed",
+    "sass:watch": "sass assets/scss:static/css -s compressed --watch",
+    "build": "npm run sass && npm run autoprefixer"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.2.24",
+    "postcss-cli": "^10.1.0",
+    "sass": "^1.62.1"
+  },
+  "autoprefixer": {
+    "browsers": "> 1%, last 2 versions, ie >= 9"
+  }
+}
