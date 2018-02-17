@@ -1,0 +1,36 @@
+@font-face {
+  font-family: "fontello";
+  src: url("/fonts/fontello/reg.eot");
+  src: url("/fonts/fontello/reg.eot#iefix") format("embedded-opentype"),
+			 url("/fonts/fontello/reg.woff2") format("woff2"),
+			 url("/fonts/fontello/reg.woff") format("woff"),
+			 url("/fonts/fontello/reg.ttf") format("truetype"),
+			 url("/fonts/fontello/reg.svg#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="su-"]:before, [class*=" su-"]:before {
+  display: inline-block;
+  font: normal normal normal 14px / 1 fontello;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.su-email:before {
+  content: "";
+}
+
+.su-twitter:before {
+  content: "";
+}
+
+.su-github:before {
+  content: "";
+}
+
+.su-dribbble:before {
+  content: "";
+}

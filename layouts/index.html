@@ -1,0 +1,29 @@
+{{ define "head" }}
+  <link rel="me" href="https://mastodon.social/@suyundukov">
+{{ end }}
+
+{{ define "styles" }}
+  <link rel="stylesheet" href="/css/main.css">
+{{ end }}
+
+{{ define "main" }}
+  <main class="main">
+    <h1>nurlan suyundukov</h1>
+    <h2>developer &amp; writer</h2>
+
+    <ul>
+      <li>
+        <a href="/blog/">blog</a>
+      </li>
+      <li>
+        <a href="{{ .Site.Params.Social.Twitter }}" target="_blank">twitter</a>
+      </li>
+      <li>
+        <a href="{{ .Site.Params.Social.Github }}" target="_blank">code</a>
+      </li>
+      <li>
+        <a href="mailto:{{ .Site.Params.Social.Email }}?subject=Hey!!!" target="_blank">message</a>
+      </li>
+    </ul>
+  </main>
+{{ end }}

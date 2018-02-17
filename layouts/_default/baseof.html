@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ .Title }}{{ if not .IsHome }} | {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+    <meta name="author" content="{{ .Site.Params.Author }}">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta property="og:title" content="{{ .Title }}{{ if not .IsHome }} | su{{ end }}">
+    <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
+    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:image" content="{{ .Site.Params.Logo | absURL }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="{{ block "theme-color" . }}#000000{{ end }}">
+    <link rel="alternate" type="application/rss+xml" title="suyundukov.com" href="/index.xml">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    {{ block "head" . }}{{ end }}
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    {{ block "styles" . }}{{ end }}
+
+    {{ if not .IsPage }}
+      <script type="application/ld+json">
+        {
+          "@context": "http://schema.org",
+          "@type": "WebSite",
+          "name": {{ .Title }},
+          "url": {{ .Permalink }},
+          "logo": {{ .Site.Params.Logo | absURL }},
+          "description": {{ .Site.Params.Description }},
+          "sameAs": [
+            {{ .Site.Params.Social.GitHub }},
+            {{ .Site.Params.Social.Twitter }}
+          ]
+        }
+      </script>
+    {{ end }}
+  </head>
+
+  <body>
+    <div id="content">
+      {{ block "main" . }}{{ end }}
+    </div>
+
+    {{ block "script" . }}{{ end }}
+  </body>
+</html>

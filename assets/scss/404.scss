@@ -1,0 +1,188 @@
+@import 'includes/colors';
+
+// Fonts Section
+@font-face {
+  font-family: 'Brandon';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/brandon/reg.eot');
+  src: local('Brandon Grotesque Regular'), local('BrandonGrotesque-Regular'),
+    url('/fonts/brandon/reg.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/brandon/reg.woff2') format('woff2'),
+    url('/fonts/brandon/reg.woff') format('woff'),
+    url('/fonts/brandon/reg.ttf') format('truetype'),
+    url('/fonts/brandon/reg.svg#reg') format('svg');
+}
+
+@font-face {
+  font-family: 'Brandon';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/brandon/bold.eot');
+  src: local('Brandon Grotesque Bold'), local('BrandonGrotesque-Bold'),
+    url('/fonts/brandon/bold.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/brandon/bold.woff2') format('woff2'),
+    url('/fonts/brandon/bold.woff') format('woff'),
+    url('/fonts/brandon/bold.ttf') format('truetype'),
+    url('/fonts/brandon/bold.svg#bold') format('svg');
+}
+
+// General Section
+body {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 240px 0;
+  position: relative;
+}
+
+.overlay {
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.content {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.message {
+  text-align: center;
+}
+
+.message-heading {
+  font: 700 2rem Brandon, Monaco, monospace;
+  letter-spacing: 0.7em;
+  padding: 0 0 0 1.4em;
+  text-transform: uppercase;
+}
+
+.message-description {
+  font: 400 22px Brandon, Monaco, monospace;
+  letter-spacing: 0.15rem;
+  line-height: 42px;
+  margin: auto;
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+.links {
+  margin: 40px auto 0;
+  max-width: 600px;
+  text-align: center;
+
+  a {
+    border: 1px solid $black;
+    color: $black;
+    display: inline-block;
+    font: 400 11px Brandon, Monaco, monospace;
+    letter-spacing: 0.1rem;
+    margin: 0 15px;
+    padding: 15px 0;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 170px;
+
+    &:before {
+      background: $black;
+      content: "";
+      height: 46px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: all 0.3s;
+      width: 0;
+    }
+
+    &:after {
+      content: "take me out of here";
+      position: relative;
+      transition: all 0.3s;
+      z-index: 999;
+    }
+
+    &:hover {
+      &:before {
+        width: 170px;
+      }
+
+      &:after {
+        color: $white;
+      }
+    }
+
+    &:nth-child(2) {
+      background: $black;
+      color: $white;
+
+      &:before {
+        background: $white;
+        left: 0;
+      }
+
+      &:after {
+        content: "report an error";
+      }
+
+      &:hover:after {
+        color: $black;
+      }
+    }
+  }
+}
+
+.social {
+  bottom: 15px;
+  left: 15px;
+  position: absolute;
+}
+
+.social-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    margin: 5px 10px;
+
+    a {
+      color: $black;
+    }
+  }
+}
+// Media Screen Section
+@media (max-width: 480px) {
+  .links a {
+    margin: 10px;
+    width: 280px;
+  }
+
+  .message-description {
+    font-size: 0.7rem;
+    line-height: 2rem;
+  }
+
+  .message-heading {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .social {
+    left: 50%;
+    margin-left: -55px;
+  }
+}

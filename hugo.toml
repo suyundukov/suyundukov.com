@@ -1,3 +1,25 @@
 baseURL = 'https://suyundukov.com/'
 languageCode = 'en-us'
 title = 'Nurlan Suyundukov'
+
+[markup.highlight]
+style = 'dracula'
+
+[permalinks]
+post = '/:year/:month/:day/:slug'
+
+[params]
+author = 'Nurlan Suyundukov'
+description = "Hey, it's me !!! If you actually seaching contact with me, you can find me on Facebook, Twitter, etc. Have a nice day !!!"
+logo = 'images/logo.png'
+
+[params.colors]
+red = '#de352c'
+violet = '#7570d5'
+yellow = '#eea900'
+
+[params.social]
+dribbble = 'https://dribbble.com/suyundukov'
+email = 'hey@suyundukov.com'
+github = 'https://github.com/suyundukov'
+twitter = 'https://twitter.com/suyundukoff'

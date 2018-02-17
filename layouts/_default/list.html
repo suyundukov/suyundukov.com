@@ -1,0 +1,29 @@
+{{- define "theme-color" -}}
+  {{ index .Site.Params.Colors (index .Pages 0).Params.color }}
+{{- end -}}
+
+{{ define "styles" }}
+  <link rel="stylesheet" href="/css/blog.css">
+{{ end }}
+
+{{ define "main" }}
+  <main class="main">
+    <div class="container">
+      {{ range .Pages.ByDate.Reverse }}
+        <div class="post {{ .Params.color }}">
+          <a href="{{ .RelPermalink }}">
+            <h2>{{ .Title }}</h2>
+            {{ with .Params.cover }}
+              <img src="/images/blog/{{ . }}">
+            {{ end }}
+          </a>
+        </div>
+        <link rel="prerender" href="{{ .RelPermalink }}">
+      {{ end }}
+    </div>
+  </main>
+{{ end }}
+
+{{ define "script" }}
+  <link rel="prefetch" href="/css/post.css" as="style">
+{{ end }}

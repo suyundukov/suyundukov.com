@@ -1,0 +1,18 @@
+@import 'includes/colors';
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@each $el, $color in $colors {
+  .#{$el} {
+    background: #{$color};
+  }
+}
