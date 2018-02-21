@@ -1,0 +1,52 @@
+{
+  "hosting": {
+    "public": "public",
+    "redirects": [
+      {
+        "source": "/git",
+        "destination": "https://go-gitignore.herokuapp.com/",
+        "type": 301
+      },
+      {
+        "source": "/chuck",
+        "destination": "https://go-chuck.herokuapp.com/",
+        "type": 301
+      },
+      {
+        "source": "/cv",
+        "destination": "https://firebasestorage.googleapis.com/v0/b/su-site-d0ba4.appspot.com/o/resume.pdf?alt=media&token=3aec4a11-db66-441c-8b06-0a53cd0eb61e",
+        "type": 301
+      }
+    ],
+    "headers": [
+      {
+        "source": "**/*.@(jpg|jpeg|png|eot|otf|ttf|ttc|woff|woff2|css|js)",
+        "headers": [
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(jpg|jpeg|png|eot|otf|ttf|ttc|woff|woff2|css|js)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=604800"
+          }
+        ]
+      },
+      {
+        "source": "404.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=604800"
+          }
+        ]
+      }
+    ],
+    "cleanUrls": true
+  }
+}
