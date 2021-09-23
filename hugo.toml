@@ -2,6 +2,8 @@ baseURL = 'https://suyundukov.com/'
 languageCode = 'en-us'
 title = 'Nurlan Suyundukov'
 
+disableKinds = ['taxonomy', 'term']
+
 [markup.highlight]
 style = 'dracula'
 
